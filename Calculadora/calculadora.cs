@@ -4,22 +4,21 @@ namespace EspacioCalculadora
     public class Calculadora
     {
         //Variables de la calculadora
-        private double termino1, termino2, resultado;
+        private double dato, resultado;
         private int operacionARealizar;
 
 
         //inicializar terminos
-        public Calculadora(double termino1, double termino2, int operacionARealizar)
+        public Calculadora(double dato = 0, int operacionARealizar)
         {
-            this.termino1 = termino1;
-            this.termino2 = termino2;
+            this.dato = dato;
             this.operacionARealizar = operacionARealizar;
         }
 
         //METODOS
-        void Sumar(double termino1, double termino2)
+        void Sumar(double termino)
         {
-            resultado = termino1 + termino2;
+            dato += termino;
         }
         void Restar(double termino1, double termino2)
         {
