@@ -1,72 +1,53 @@
 namespace EspacioCalculadora
 {
-
     public class Calculadora
     {
-        //Variables de la calculadora
-        private double dato, resultado;
-        private int operacionARealizar;
+        // Campo privado
+        private double dato;
 
-
-        //inicializar terminos
-        public Calculadora(double dato = 0, int operacionARealizar)
+        // Constructor
+        public Calculadora()
         {
-            this.dato = dato;
-            this.operacionARealizar = operacionARealizar;
+            dato = 0;
         }
 
-        //METODOS
-        void Sumar(double termino)
+        // Métodos
+        public void Sumar(double termino)
         {
             dato += termino;
         }
-        void Restar(double termino1, double termino2)
-        {
-            resultado = termino1 - termino2;
-        }
-        void Multiplicar(double termino1, double termino2)
-        {
-            resultado = termino1 * termino2;
-        }
-        void Dividir(double termino1, double termino2)
-        {
-            resultado = termino1 / termino2;
-        }
-        void Limpiar(double termino1, double termino2)
-        {
 
-        }
-        void calcularResultado()
+        public void Restar(double termino)
         {
-            switch (operacionARealizar)
+            dato -= termino;
+        }
+
+        public void Multiplicar(double termino)
+        {
+            dato *= termino;
+        }
+
+        public void Dividir(double termino)
+        {
+            if (termino != 0)
             {
-                case 1:
-                    Sumar(termino1, termino2);
-                    break;
-                case 2:
-                    Restar(termino1, termino2);
-                    break;
-                case 3:
-                    Multiplicar(termino1, termino2);
-                    break;
-                case 4:
-                    Dividir(termino1, termino2);
-                    break;
-                case 5:
-                    Limpiar(termino1, termino2);
-                    break;
-
+                dato /= termino;
             }
+            else
+            {
+                Console.WriteLine("No se puede dividir por cero.");
+            }
+        }
+
+        public void Limpiar()
+        {
+            dato = 0;
+        }
+
+        // Propiedad Resultado (solo get)
+        public double Resultado
+        {
+            get { return dato; }
         }
     }
 }
-
-
-
-
-
-// 
-// ● void Restar(double termino)
-// ● 
-// ● 
-// ● 
